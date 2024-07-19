@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    environment:
+      - PYTHONUNBUFFERED=1
+
+
+# --Explanation:
+# --Version: Specifies the version of the docker-compose syntax (3.8 in this case).
+# Services: Defines a service named web.
+# build: Specifies how to build the service, using the Dockerfile in the current directory (.).
+# command: Overrides the default CMD specified in the Dockerfile to run the Django development server.
+# ports: Maps port 8000 on the host to port 8000 in the container.
+# volumes: Mounts the current directory (.) to /code inside the container, allowing live code reloading during development.
+# environment: Sets environment variables (PYTHONUNBUFFERED=1) to match those in the Dockerfile.
