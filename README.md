@@ -56,3 +56,22 @@ pytest -vvv -s tests/
 # pytest --cov
 # open htmlcov/index.html
 ```
+###Building and Running the Dockerized Application
+```
+To build and run your Dockerized application, follow these steps:
+
+Build the Docker Image:
+
+#Copy code
+#docker-compose build
+#Run the Docker Containers:
+```
+###Copy code
+```
+#docker-compose up
+#Add the -d flag to run the containers in detached mode (in the background):
+```
+###Copy code
+```
+#docker-compose up -d
+```
